@@ -1,0 +1,168 @@
+html{
+  // Primary color:
+  --primary-hue: 225;
+  --primary-saturation: 63%;
+  --primary-lightness: 41%;
+  --primary: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+  --primary-dark: hsl(var(--primary-hue), var(--primary-saturation), 5%);
+  --primary-dark-9: hsla(var(--primary-hue), var(--primary-saturation), 5%, .9);
+  --primary-dark-7: hsla(var(--primary-hue), var(--primary-saturation), 5%, .7);
+  --primary-light: hsl(var(--primary-hue), var(--primary-saturation), 90%);
+  --primary-light-9: hsla(var(--primary-hue), var(--primary-saturation), 90%, .9);
+  --primary-light-5: hsla(var(--primary-hue), var(--primary-saturation), 90%, .5);
+}
+
+.background-main {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+
+  background: linear-gradient(333deg, var(--primary), var(--primary-light));
+  background-size: 400% 400%;
+
+  -webkit-animation: backgroundMotion 15s linear infinite;
+  -moz-animation: backgroundMotion 15s linear infinite;
+  -o-animation: backgroundMotion 15s linear infinite;
+  animation: backgroundMotion 15s linear infinite;
+}
+
+.background-main.dark {
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+}
+@-webkit-keyframes backgroundMotion {
+    0%{background-position:32% 0%;}
+    50%{background-position:69% 100%}
+    100%{background-position:32% 0%}
+}
+@-moz-keyframes backgroundMotion {
+    0%{background-position:32% 0%}
+    50%{background-position:69% 100%}
+    100%{background-position:32% 0%}
+}
+@-o-keyframes backgroundMotion {
+    0%{background-position:32% 0%}
+    50%{background-position:69% 100%}
+    100%{background-position:32% 0%}
+}
+@keyframes backgroundMotion {
+    0%{background-position:32% 0%}
+    50%{background-position:69% 100%}
+    100%{background-position:32% 0%}
+}
+
+.background-shine {
+  position: fixed;
+  top: -50vh;
+  bottom: -50vh;
+  right: -50vw;
+  left: -50vw;
+  z-index: -1;
+}
+.obtuse {
+  background: linear-gradient(123deg, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, .3) 55%, rgba(0, 0, 0, .3) 55%, rgba(0, 0, 0, 0) 70%);
+  // transform: rotate(5deg);
+  // from 30deg to -7 (max)
+  -webkit-animation: shineMotion 75s ease infinite alternate-reverse;
+  -moz-animation: shineMotion 75s ease infinite alternate-reverse;
+  -o-animation: shineMotion 75s ease infinite alternate-reverse;
+  animation: shineMotion 75s ease infinite alternate-reverse;
+}
+
+.acute {
+  background: linear-gradient(37deg, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, .3) 55%, rgba(0, 0, 0, .3) 55%, rgba(0, 0, 0, 0) 70%);
+  // transform: rotate(30deg);
+  // from 30deg to -7 (max)
+  -webkit-animation: shineMotion 115s ease infinite alternate;
+  -moz-animation: shineMotion 115s ease infinite alternate;
+  -o-animation: shineMotion 15s ease infinite alternate;
+  animation: shineMotion 115s ease infinite alternate;
+
+}
+@-webkit-keyframes shineMotion {
+  0%  {transform: rotate(-7deg)}
+  25% {transform: rotate(18deg)}
+  50% {transform: rotate(5deg)}
+  75% {transform: rotate(18deg)}
+  100%{transform: rotate(30deg)}
+}
+@-moz-keyframes shineMotion {
+  0%  {transform: rotate(-7deg)}
+  25% {transform: rotate(18deg)}
+  50% {transform: rotate(5deg)}
+  75% {transform: rotate(18deg)}
+  100%{transform: rotate(30deg)}
+}
+@-o-keyframes shineMotion {
+  0%  {transform: rotate(-7deg)}
+  25% {transform: rotate(18deg)}
+  50% {transform: rotate(5deg)}
+  75% {transform: rotate(18deg)}
+  100%{transform: rotate(30deg)}
+}
+@keyframes shineMotion {
+  0%  {transform: rotate(-7deg)}
+  25% {transform: rotate(18deg)}
+  50% {transform: rotate(5deg)}
+  75% {transform: rotate(18deg)}
+  100%{transform: rotate(30deg)}
+}
+
+main {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-wrapper,.invite-wrapper {
+  background: var(--primary-dark-9);
+  color: var(--primary-light-9);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-shadow: 4px 4px var(--primary-dark-7);
+  input {
+    background: transparent;
+    color: var(--primary-light-9);
+    margin: 8px;
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid var(--primary-light-9);
+    font-size: 20px;
+  }
+  button {
+    font-size: 20px;
+    margin: 8px;
+    padding: 8px;
+
+  }
+}
+
+
+.login-wrapper {
+
+
+}
+.invite-wrapper {
+  height: 100%;
+  justify-content: space-between;
+  overflow-y: scroll;
+  .invitee-list {
+    .list-item{
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      flex-wrap: wrap;
+      span {
+        margin: 8px;
+        padding: 8px;
+      }
+    }
+  }
+}

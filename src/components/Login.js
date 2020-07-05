@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import { connect } from 'react-redux'
+
+import { login } from '../store/actions/mainActions';
+
+const Login = function(props) {
+  const [form, setForm] = useState({
+    // userName: "testuser1",
+    // password: "Kruntummy$1",
+  })
+
+  const changeHandler = event => {
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  return <>
+    <div className="login-wrapper">
+      <input type="text" name="userName" className="userName" placeholder="Username" onChange={ e => {changeHandler(e)} } value={ form.userName }/>
+      <input type="password" name="password" className="password" placeholder="Password" onChange={ e => changeHandler(e) } value={ form.password }/>
+      <button onClick={ () => props.login(form) }>Login</button>
+    </div>
+  </>
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (data) => dispatch(login(data))
+  } 
+}
+
+export default connect(null, mapDispatchToProps)(Login);
