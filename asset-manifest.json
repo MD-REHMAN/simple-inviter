@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simple-inviter/static/css/main.05afd668.chunk.css",
+    "main.css": "/simple-inviter/static/css/main.f71733b2.chunk.css",
     "main.js": "/simple-inviter/static/js/main.065d98f7.chunk.js",
     "main.js.map": "/simple-inviter/static/js/main.065d98f7.chunk.js.map",
     "runtime-main.js": "/simple-inviter/static/js/runtime-main.ef9124c8.js",
@@ -8,15 +8,15 @@
     "static/js/2.cbf5b23b.chunk.js": "/simple-inviter/static/js/2.cbf5b23b.chunk.js",
     "static/js/2.cbf5b23b.chunk.js.map": "/simple-inviter/static/js/2.cbf5b23b.chunk.js.map",
     "index.html": "/simple-inviter/index.html",
-    "precache-manifest.75bc55910a5689c3b00785cad64cae6d.js": "/simple-inviter/precache-manifest.75bc55910a5689c3b00785cad64cae6d.js",
+    "precache-manifest.991f6d0d4b120e967c0edf659c490ebc.js": "/simple-inviter/precache-manifest.991f6d0d4b120e967c0edf659c490ebc.js",
     "service-worker.js": "/simple-inviter/service-worker.js",
-    "static/css/main.05afd668.chunk.css.map": "/simple-inviter/static/css/main.05afd668.chunk.css.map",
+    "static/css/main.f71733b2.chunk.css.map": "/simple-inviter/static/css/main.f71733b2.chunk.css.map",
     "static/js/2.cbf5b23b.chunk.js.LICENSE.txt": "/simple-inviter/static/js/2.cbf5b23b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ef9124c8.js",
     "static/js/2.cbf5b23b.chunk.js",
-    "static/css/main.05afd668.chunk.css",
+    "static/css/main.f71733b2.chunk.css",
     "static/js/main.065d98f7.chunk.js"
   ]
 }
