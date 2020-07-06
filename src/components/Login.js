@@ -5,8 +5,10 @@ import { login } from '../store/actions/mainActions';
 
 const Login = function(props) {
   const [form, setForm] = useState({
-    userName: "testuser1",
-    password: "Kruntummy$1",
+    userName: "",
+    password: "",
+    // userName: "testuser1",
+    // password: "Kruntummy$1",
   })
   const [formError, setFormError] = useState({
     userName: "",
