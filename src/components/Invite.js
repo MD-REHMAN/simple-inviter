@@ -4,13 +4,20 @@ import { connect } from 'react-redux'
 import { sendInvite } from '../store/actions/mainActions';
 
 const Invite = function (props) {
-  const [inviteForm, setInviteForm] = useState({});
+  const [inviteForm, setInviteForm] = useState({
+    email: '',
+    mobile: '',
+  });
+  const [inviteFormError, setInviteFormError] = useState({
+    email: '',
+    mobile: '',
+  });
   const [inviteeList, setinviteeList] = useState([
   ]);
 
   const inviteeListTemplate = inviteeList.map((item, index) => <div className="list-item">
     <span className="eamil">
-      Emai: { item.email }
+      Email: { item.email }
     </span>
     <span className="mobile">
       Mobile: { item.mobile }
@@ -23,9 +30,35 @@ const Invite = function (props) {
       ...inviteForm,
       [event.target.name]: event.target.value,
     })
+    setInviteFormError({
+      ...inviteFormError,
+      [event.target.name]: ''
+    })
   }
 
+  const emptyCheck = (element) => {
+    if (!inviteForm[element]) {
+      setInviteFormError({
+        ...inviteFormError,
+        [element]: `It cannot be empty`
+      })
+      return true;
+    }
+    return false
+  }
+
+  const validateForm = () => {
+    let validateAry = Object.keys(inviteForm).map(key => {
+      if (emptyCheck(key)) return false;
+      return true;
+    })
+    console.log(" apppu - ", inviteFormError);
+    return validateAry.reduce((c, v) => c && v);
+  }
+
+
   const AddToList = () => {
+    if (!validateForm()) return false;
     setinviteeList([
       ...inviteeList,
       {
@@ -33,7 +66,10 @@ const Invite = function (props) {
         index: inviteeList.length,
       }
     ])
-    setInviteForm({});
+    setInviteForm({
+      email: "",
+      mobile: "",
+    });
     // console.log("inviteeList", inviteeList);
   }
 
@@ -57,8 +93,8 @@ const Invite = function (props) {
     <div className="invite-wrapper">
       <div>
         <div className="inviter-adder">
-          <input type="text" name="email" className="email" placeholder="Email" onChange={ e => { changeHandler(e) } } value={ inviteForm.email } />
-          <input type="text" name="mobile" className="mobile" placeholder="Mobile Number" onChange={ e => { changeHandler(e) } } value={ inviteForm.mobile }/>
+          <input type="text" name="email" className="email" placeholder={ inviteFormError.email || "Email" } onChange={ e => { changeHandler(e) } } value={ inviteForm.email } />
+          <input type="text" name="mobile" className="mobile" placeholder={ inviteFormError.mobile || "Mobile Number" } onChange={ e => { changeHandler(e) } } value={ inviteForm.mobile }/>
           <button onClick={ () => AddToList() }>Add</button>
         </div>
         <div className="invitee-list">

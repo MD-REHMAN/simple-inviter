@@ -1,6 +1,7 @@
 export const universalApiCaller = function ({ url, method, data}) {
   return fetch(url, {
     method: method,
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
     },
