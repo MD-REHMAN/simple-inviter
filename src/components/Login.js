@@ -34,6 +34,14 @@ const Login = function(props) {
       })
       return true;
     }
+    if (element === 'password' && form[element].length < 8) {
+      setFormError({
+        ...formError,
+        [element]: `Atlest 8 characters`
+      })
+      return true;
+    } 
+
     return false
   }
 
@@ -42,14 +50,21 @@ const Login = function(props) {
       if (emptyCheck(key)) return false;
       return true;
     })
+
     validateAry.reduce((c, v) => c && v) && props.login(form)
     return true;
   }
 
   return <>
     <div className="login-wrapper">
-      <input type="text" name="userName" className="userName" placeholder={ formError.userName || "Username" } onChange={ e => {changeHandler(e)} } value={ form.userName }/>
-      <input type="password" name="password" className={ formError.password || "Password" } placeholder="Password" onChange={ e => changeHandler(e) } value={ form.password }/>
+      <div className="input-element">
+        <input type="text" name="userName" className={ "username " + (formError.userName && 'has-error') } placeholder="Username" onChange={ e => {changeHandler(e)} } value={ form.userName }/>
+        <span className="errorMessage">{ formError.userName }</span>
+      </div>
+      <div className="input-element">
+        <input type="password" name="password" className={ "password " + (formError.password && 'has-error') } placeholder="Password" onChange={ e => changeHandler(e) } value={ form.password }/>
+        <span className="errorMessage">{ formError.password }</span>
+      </div>
       <button onClick={ () => validateForm() }>Login</button>
     </div>
   </>

@@ -44,6 +44,20 @@ const Invite = function (props) {
       })
       return true;
     }
+    if (element === 'mobile' && inviteForm[element].length !== 10) {
+      setInviteFormError({
+        ...inviteFormError,
+        [element]: `Mobile should only contain 10 digit`
+      })
+      return true;
+    }
+    if (element === 'email' && !inviteForm[element].includes('@')) {
+      setInviteFormError({
+        ...inviteFormError,
+        [element]: `Invalid email`
+      })
+      return true;
+    }
     return false
   }
 
@@ -91,8 +105,16 @@ const Invite = function (props) {
     <div className="invite-wrapper">
       <div>
         <div className="inviter-adder">
-          <input type="text" name="email" className="email" placeholder={ inviteFormError.email || "Email" } onChange={ e => { changeHandler(e) } } value={ inviteForm.email } />
-          <input type="text" name="mobile" className="mobile" placeholder={ inviteFormError.mobile || "Mobile Number" } onChange={ e => { changeHandler(e) } } value={ inviteForm.mobile }/>
+          <div className="input-element">
+            <input type="text" name="email" className={ "email " + (inviteFormError.email && "has-error") } placeholder="Email" onChange={ e => { changeHandler(e) } } value={ inviteForm.email } />
+            <span className="errorMessage">{ inviteFormError.email }</span>
+
+          </div>
+          <div className="input-element">
+            <input type="text" name="mobile" className={ "movile " + (inviteFormError.mobile && "has-error") } placeholder="Mobile Number" onChange={ e => { changeHandler(e) } } value={ inviteForm.mobile }/>
+            <span className="errorMessage">{ inviteFormError.mobile }</span>
+
+          </div>
           <button onClick={ () => AddToList() }>Add</button>
         </div>
         <div className="invitee-list">

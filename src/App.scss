@@ -127,6 +127,12 @@ main {
   flex-direction: column;
   padding: 40px;
   box-shadow: 4px 4px var(--primary-dark-7);
+  .input-element {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
   input {
     background: transparent;
     color: var(--primary-light-9);
@@ -135,12 +141,20 @@ main {
     border: none;
     border-bottom: 2px solid var(--primary-light-9);
     font-size: 20px;
+    &.has-error {
+      border-bottom: 2px solid red;
+    }
+  }
+  .errorMessage {
+    color: red;
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
   }
   button {
     font-size: 20px;
     margin: 8px;
     padding: 8px;
-
   }
 }
 
@@ -151,8 +165,13 @@ main {
 }
 .invite-wrapper {
   height: 100%;
+  width: 50%;
   justify-content: space-between;
   overflow-y: scroll;
+  .inviter-adder {
+    display: flex;
+    justify-content: space-between;
+  }
   .invitee-list {
     .list-item{
       display: flex;
