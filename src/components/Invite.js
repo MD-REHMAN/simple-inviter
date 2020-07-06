@@ -52,7 +52,6 @@ const Invite = function (props) {
       if (emptyCheck(key)) return false;
       return true;
     })
-    console.log(" apppu - ", inviteFormError);
     return validateAry.reduce((c, v) => c && v);
   }
 
@@ -70,7 +69,6 @@ const Invite = function (props) {
       email: "",
       mobile: "",
     });
-    // console.log("inviteeList", inviteeList);
   }
 
   const RemoveItem = index => {

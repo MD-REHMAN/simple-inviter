@@ -42,7 +42,6 @@ const Login = function(props) {
       if (emptyCheck(key)) return false;
       return true;
     })
-    console.log(" apppu - ", formError);
     validateAry.reduce((c, v) => c && v) && props.login(form)
     return true;
   }
