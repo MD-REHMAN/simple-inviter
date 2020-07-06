@@ -155,6 +155,17 @@ main {
     font-size: 20px;
     margin: 8px;
     padding: 8px;
+    border: 3px solid var(--primary-light-9);
+    border-radius: 8px;
+    background: var(--primary-dark-7);
+    color: var(--primary-light-9);
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      background: var(--primary-light-9);
+      color: var(--primary-dark-7);
+
+    }
   }
 }
 
@@ -164,15 +175,18 @@ main {
 
 }
 .invite-wrapper {
-  height: 100%;
+  // height: 100%;
   width: 50%;
   justify-content: space-between;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   .inviter-adder {
     display: flex;
     justify-content: space-between;
   }
   .invitee-list {
+    height: 50vh;
+    overflow-y: scroll;
+
     .list-item{
       display: flex;
       justify-content: space-between;
@@ -181,6 +195,7 @@ main {
       span {
         margin: 8px;
         padding: 8px;
+        min-width: 30px;
       }
     }
   }
