@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/simple-inviter/static/css/main.60371105.chunk.css",
-    "main.js": "/simple-inviter/static/js/main.9a782433.chunk.js",
-    "main.js.map": "/simple-inviter/static/js/main.9a782433.chunk.js.map",
+    "main.js": "/simple-inviter/static/js/main.277e2b52.chunk.js",
+    "main.js.map": "/simple-inviter/static/js/main.277e2b52.chunk.js.map",
     "runtime-main.js": "/simple-inviter/static/js/runtime-main.ef9124c8.js",
     "runtime-main.js.map": "/simple-inviter/static/js/runtime-main.ef9124c8.js.map",
     "static/js/2.cbf5b23b.chunk.js": "/simple-inviter/static/js/2.cbf5b23b.chunk.js",
     "static/js/2.cbf5b23b.chunk.js.map": "/simple-inviter/static/js/2.cbf5b23b.chunk.js.map",
     "index.html": "/simple-inviter/index.html",
-    "precache-manifest.ceb06d40c1a8d680ece4211edaa3570f.js": "/simple-inviter/precache-manifest.ceb06d40c1a8d680ece4211edaa3570f.js",
+    "precache-manifest.689b5dd673d6df0dddead8c53e4024ad.js": "/simple-inviter/precache-manifest.689b5dd673d6df0dddead8c53e4024ad.js",
     "service-worker.js": "/simple-inviter/service-worker.js",
     "static/css/main.60371105.chunk.css.map": "/simple-inviter/static/css/main.60371105.chunk.css.map",
     "static/js/2.cbf5b23b.chunk.js.LICENSE.txt": "/simple-inviter/static/js/2.cbf5b23b.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ef9124c8.js",
     "static/js/2.cbf5b23b.chunk.js",
     "static/css/main.60371105.chunk.css",
-    "static/js/main.9a782433.chunk.js"
+    "static/js/main.277e2b52.chunk.js"
   ]
 }
